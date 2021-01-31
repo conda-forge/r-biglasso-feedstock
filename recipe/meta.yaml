@@ -1,4 +1,4 @@
-{% set version = "1.4.0" %}
+{% set version = "1.4.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/biglasso_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/biglasso/biglasso_{{ version }}.tar.gz
-  sha256: 3c3a9c02824c43b13dfeefe77c38965b1d15382f040f3d423fc30cac7e9281b6
+  sha256: 1caebc9c8f4ca605770e5dc99a4cd6b41102e84c2d11cd50e548e5d5308d74e0
 
 build:
   merge_build_host: true  # [win]
