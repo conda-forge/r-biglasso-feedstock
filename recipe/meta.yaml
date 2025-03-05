@@ -1,4 +1,4 @@
-{% set version = "1.6.0" %}
+{% set version = "1.6.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/biglasso_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/biglasso/biglasso_{{ version }}.tar.gz
-  sha256: 8cca788e8585bbb9cac6d13d028d75137a38bb2dbe34eac541aafa557c60ab98
+  sha256: 5a30f6652311f98b5778dde732d885f8c19d2a548b2d81ba78394f510d624274
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
