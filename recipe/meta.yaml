@@ -12,10 +12,14 @@ source:
   sha256: 5a30f6652311f98b5778dde732d885f8c19d2a548b2d81ba78394f510d624274
 
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -25,6 +29,7 @@ requirements:
     - {{ stdlib("c") }}                # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
+    - {{ compiler('fortran') }}        # [osx and arm64]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -34,7 +39,7 @@ requirements:
     - r-bh                         # [build_platform != target_platform]
     - r-matrix                     # [build_platform != target_platform]
     - r-rcpp >=0.12.1              # [build_platform != target_platform]
-    - r-rcpparmadillo              # [build_platform != target_platform]
+    - r-rcpparmadillo >=0.8.600    # [build_platform != target_platform]
     - r-bigmemory >=4.5.0          # [build_platform != target_platform]
     - r-ncvreg                     # [build_platform != target_platform]
   host:
@@ -44,14 +49,15 @@ requirements:
     - r-bh
     - r-matrix
     - r-rcpp >=0.12.1
-    - r-rcpparmadillo
+    - r-rcpparmadillo >=0.8.600
     - r-bigmemory >=4.5.0
     - r-ncvreg
   run:
     - r-base
+    #- r-bh
     - r-matrix
     - r-rcpp >=0.12.1
-    - r-rcpparmadillo
+    - r-rcpparmadillo >=0.8.600
     - r-bigmemory >=4.5.0
     - r-ncvreg
 
