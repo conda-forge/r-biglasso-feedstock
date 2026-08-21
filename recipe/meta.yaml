@@ -1,4 +1,4 @@
-{% set version = "1.6.1" %}
+{% set version = "1.7.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/biglasso_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/biglasso/biglasso_{{ version }}.tar.gz
-  sha256: 5a30f6652311f98b5778dde732d885f8c19d2a548b2d81ba78394f510d624274
+  sha256: abf68042338ddf770592a3290e03b26253a5fbbdfdf766d40b069c0690202ebc
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -69,8 +69,8 @@ test:
 about:
   home: https://github.com/YaohuiZeng/biglasso, https://arxiv.org/abs/1701.05936
   license: GPL-3.0-only
-  summary: Extend lasso and elastic-net model fitting for ultrahigh-dimensional, multi-gigabyte data sets that cannot be loaded into memory. It's much more memory- and computation-efficient as compared to existing lasso-fitting packages like 'glmnet' and 'ncvreg', thus allowing for very powerful big data analysis even with
-    an ordinary laptop.
+  summary: Extend lasso and elastic-net model fitting for ultrahigh-dimensional, multi-gigabyte data sets that cannot be loaded into memory. It's much more memory- and computation-efficient as compared to existing lasso-fitting packages like 'glmnet' and 'ncvreg', thus allowing for very powerful big data analysis even 
+    with an ordinary laptop.
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
